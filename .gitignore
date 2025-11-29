@@ -12,7 +12,6 @@ serviceAccountKey.json
 
 
 # --- NODEJS / REACT (Frontend) ---
-frontend/src/
 frontend/node_modules/
 frontend/dist/
 frontend/build/
