@@ -1,0 +1,26 @@
+# --- Secrets (CRITICAL) ---
+serviceAccountKey.json
+*.env
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# --- VS Code settings ---
+.vscode/
+
+
+# --- NODEJS / REACT (Frontend) ---
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.firebase/
+frontend/coverage/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# --- Operating System Junk ---
+.DS_Store
+Thumbs.db
