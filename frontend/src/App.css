@@ -1,42 +1,160 @@
-#root {
-  max-width: 1280px;
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+  color: #1f2937;
+}
+
+.container {
+  max-width: 1200px; /* Increased width for grid */
   margin: 0 auto;
-  padding: 2rem;
+  padding: 20px;
+}
+
+/* Header Section */
+.header {
   text-align: center;
+  margin-bottom: 30px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.header h1 {
+  color: #111827;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Controls Section */
+.controls {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.controls label {
+  font-weight: 600;
+  color: #4b5563;
+  font-size: 1.1rem;
 }
 
-.card {
-  padding: 2em;
+.date-picker-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-.read-the-docs {
-  color: #888;
+.date-input {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+.date-arrow {
+  font-weight: bold;
+  color: #3b82f6;
+  font-size: 1.2rem;
+}
+
+.end-date-display {
+  padding: 10px 15px;
+  background: #eef2ff;
+  border-radius: 8px;
+  color: #3b82f6;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* GRID LAYOUT FOR MATCHES */
+.matches-grid {
+  display: grid;
+  /* This creates columns automatically! Min width 350px, otherwise stretch */
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.match-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 5px solid #3b82f6;
+  height: 100%; /* Ensures all cards in a row match height */
+}
+
+.match-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.match-info h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #111827;
+  min-height: 3em; /* Aligns buttons even if names are long */
+}
+
+.match-meta {
+  color: #6b7280;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  background: #f9fafb;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.match-meta span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.action-btn {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+  margin-top: auto; /* Pushes button to bottom */
+}
+
+.action-btn:hover {
+  background-color: #059669;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px;
+  color: #6b7280;
+  font-size: 1.2rem;
+  grid-column: 1 / -1; /* Make empty state span full width */
 }
