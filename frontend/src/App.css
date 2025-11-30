@@ -209,3 +209,66 @@ body {
   font-size: 1.1rem;
   grid-column: 1 / -1; 
 }
+
+.filter-section {
+  margin-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 15px;
+}
+
+.filter-label {
+  font-weight: 700;
+  color: #4b5563;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.pitch-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 150px; /* Limit height so it doesn't take up whole screen */
+  overflow-y: auto;  /* Scroll if too many pitches */
+  padding: 5px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #f9fafb;
+}
+
+.pitch-chip {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  color: #374151;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pitch-chip:hover {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.pitch-chip.selected {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.pitch-chip.selected:hover {
+  background-color: #2563eb;
+}
+
+/* Scrollbar styling for the pitch list */
+.pitch-list::-webkit-scrollbar {
+  width: 6px;
+}
+.pitch-list::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 4px;
+}
